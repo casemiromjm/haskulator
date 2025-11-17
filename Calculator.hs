@@ -53,22 +53,34 @@ exprCont acc = ( do
                   t <- term
                   exprCont (Add acc t)
                 )
-               <|> ( do
+              <|> ( do
                       char '-'
                       t <- term
                       exprCont (Sub acc t)
                     )
-               <|> return acc
+              <|> return acc
               
 term :: Parser Expr
 term = do f <- factor
           termCont f
 
 termCont :: Expr -> Parser Expr
-termCont acc =  do char '*'
-                   f <- factor  
-                   termCont (Mul acc f)
-                 <|> return acc
+termCont acc = ( do 
+                  char '*'
+                  f <- factor  
+                  termCont (Mul acc f)
+                )
+                <|> ( do
+                        char '/'
+                        f <- factor
+                        termCont (Div acc f)
+                    )
+                <|> ( do
+                        char '%'
+                        f <- factor
+                        termCont (Rem acc f)
+                    )
+                <|> return acc
 
 factor :: Parser Expr
 factor = do n <- natural
