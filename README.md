@@ -4,10 +4,7 @@ Project developed as Functional Programming Project for PFL 2025/26 course @FEUP
 ## How to run
 
 ```bash
-git clone git@github.com:casemiromjm/haskulator.git
-cd haskulator
-
-ghc Calculator && ./Calculator
+git clone git@github.com:casemiromjm/haskulator.git && cd haskulator
 ```
 
 Manually compile and execute code
@@ -45,3 +42,6 @@ x+y
 7
 ...
 ```
+
+## Flaws
+Currently, the code crashes when trying to divide by 0 and when the user tries to use an undefined variable.
