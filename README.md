@@ -24,7 +24,16 @@ Use .sh file to run haskulator
 ## Features
 Supports operators: addition, subtraction, multiplication, integer division and modulus.
 
+```python
+1+1
+2
+3*3
+9
+...
+```
+
 Also support variable assignment:
+
 ```python
 x=2
 2
@@ -34,4 +43,5 @@ y=3
 3
 x+y
 7
+...
 ```
