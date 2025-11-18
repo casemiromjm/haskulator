@@ -13,9 +13,13 @@ Manually compile and execute code
 ghc Calculator && ./Calculator
 ```
 
-Use .sh file to run haskulator
+Use haskulator.sh file to run haskulator
 ```bash
 ./haskulator.sh
+```
+User clean.sh to remove compilation related files
+```bash
+./clean.sh
 ```
 
 ## Features
